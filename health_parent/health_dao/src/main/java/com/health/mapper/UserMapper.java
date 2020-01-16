@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import com.health.pojo.User;
 
 public interface UserMapper {
-	@Select("select * from user")
+	@Select("select * from t_user")
 	List<User> list();
 
 }
