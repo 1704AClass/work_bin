@@ -10,4 +10,7 @@
  			where code = #{value} or name=#{value}
  		</if>
  	</select>
+ 	<select id="findAll" resultType="com.health.pojo.CheckItem" >
+ 		select * from t_checkitem
+ 	</select>
  </mapper>

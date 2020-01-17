@@ -39,7 +39,7 @@ public interface CheckItemMapper {
 	/**
      * 检查项列表
      */
-	@Select("select * from t_checkitem")
+	//@Select("select * from t_checkitem")
 	List<CheckItem> findAll();
 	
 }
