@@ -67,5 +67,10 @@ public class CheckGroupServiceImpl implements CheckGroupService{
 		Page<CheckItem> page=checkGroupDao.selectByCondition(queryString);
 		return new PageResult(page.getTotal(),page.getResult());
 	}
+	@Override
+	public List<CheckGroup> findAll() {
+		// TODO Auto-generated method stub
+		return checkGroupDao.findAll();
+	}
 	
 }

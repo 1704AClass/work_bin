@@ -21,7 +21,6 @@
 	    </bean>
 	  </mvc:message-converters>
 	</mvc:annotation-driven>
-	
 	<!-- 引用dubbo 服务 -->
 	<dubbo:application name="health_backend"/>
 	<dubbo:registry address="zookeeper://localhost:2181"/>
@@ -33,4 +32,5 @@
 		<property name="maxUploadSize" value="5242880"></property>
 		<property name="maxInMemorySize" value="4096"></property>
 	</bean>
+	<import resource="spring-redis.xml"></import>
 </beans>
