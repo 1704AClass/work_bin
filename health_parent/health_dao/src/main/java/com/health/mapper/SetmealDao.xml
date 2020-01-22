@@ -16,6 +16,16 @@
         <result column="attention" property="attention"/>
         <result column="img" property="img"/>
     </resultMap>
+    <resultMap id="findByIdResultMap" type="com.health.pojo.Setmeal" extends="baseResultMap">
+        <!--多对多映射-->
+        <collection
+                property="checkGroups"
+                ofType="com.health.pojo.CheckGroup"
+                select="com.health.mapper.CheckGroupDao.findCheckGroupById"
+                column="id"
+                >
+        </collection>
+    </resultMap>
  	<!-- 新增 -->
  	<insert id="add" parameterType="com.health.pojo.Setmeal">
  		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
