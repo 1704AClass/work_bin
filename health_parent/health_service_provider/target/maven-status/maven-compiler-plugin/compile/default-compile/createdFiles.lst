@@ -1,5 +1,6 @@
 com\health\service\impl\OrderServiceImpl.class
 com\health\service\impl\MemberServiceImpl.class
+com\health\service\impl\ReportServiceImpl.class
 com\health\service\impl\UserServiceImpl.class
 com\health\service\impl\OrderSettingServiceImpl.class
 com\health\service\impl\CheckItemServiceImpl.class

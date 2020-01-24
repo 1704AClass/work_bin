@@ -54,14 +54,20 @@ public class SetmealServiceImpl implements SetmealService{
 		Page<Setmeal> page=setmealDao.selectByCondition(queryString);
 		return new PageResult(page.getTotal(),page.getResult());
 	}
-	 public List<Setmeal> findAll() {
-	        return setmealDao.findAll();
-	    }
+	
+	public List<Setmeal> findAll() {
+        return setmealDao.findAll();
+    }
 
-	    //根据套餐ID查询套餐详情（套餐基本信息、套餐对应的检查组信息、检查组对应的检查项信息）
-	    public Setmeal findById(int id) {
-	        return setmealDao.findById(id);
-	    }
+    //根据套餐ID查询套餐详情（套餐基本信息、套餐对应的检查组信息、检查组对应的检查项信息）
+    public Setmeal findById(int id) {
+        return setmealDao.findById(id);
+    }
+    //查询套餐预约占比数据
+	@Override
+	public List<Map<String, Object>> findSetmealCount() {
+		return setmealDao.findSetmealCount();
+	}
 
 
 }
