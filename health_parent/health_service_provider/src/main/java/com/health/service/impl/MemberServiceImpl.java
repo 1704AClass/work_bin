@@ -5,14 +5,17 @@ import com.health.mapper.MemberDao;
 import com.health.pojo.Member;
 import com.health.service.MemberService;
 import com.health.utils.MD5Utils;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 会员服务
  */
-@Service(interfaceClass = MemberService.class)
-@Transactional
+@Service
 public class MemberServiceImpl implements MemberService {
     @Autowired
     private MemberDao memberDao;
@@ -31,4 +34,15 @@ public class MemberServiceImpl implements MemberService {
         }
         memberDao.add(member);
     }
+    //根据月份查询会员数量
+	@Override
+	public List<Integer> findMemberCountByMonths(List<String> months) {
+		List<Integer> memberCount = new ArrayList<>();
+        for (String month : months) {
+            String date = month + ".31";//2018.05.31
+            Integer count = memberDao.findMemberCountBeforeDate(date);
+            memberCount.add(count);
+        }
+        return memberCount;
+	}
 }
